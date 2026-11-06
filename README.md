@@ -35,6 +35,6 @@ No external project service or account is required to build or run the app.
 ## Known limitations
 
 - Inquiry sending is not enabled; the contact form validates details locally.
-- Original hosted videos were not included in the export. The site uses bundled
-  still images instead, and all displayed images are served locally.
+- The services page plays the supplied overview video from local files. The
+  homepage uses a bundled still image; all displayed media are served locally.
 - The source has existing formatting lint errors.

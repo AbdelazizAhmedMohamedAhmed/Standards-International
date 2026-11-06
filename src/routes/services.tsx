@@ -1,7 +1,6 @@
 import { SITE_URL } from "@/lib/site-content";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import supplyChainPoster from "@/assets/real-warehouse.jpg";
 import { services } from "@/lib/site-content";
 import { PageHero, CtaBand } from "@/components/site/SiteChrome";
 
@@ -25,7 +24,18 @@ function Services() {
   return (
     <>
       <PageHero eyebrow="Our services" title="From first inquiry to final delivery." intro="Seven connected services that help businesses trade internationally with confidence." />
-      <img src={supplyChainPoster} alt="Warehouse and logistics operations" className="aspect-video w-full bg-navy object-contain" />
+      <video
+        src="/videos/standards-services-overview.mp4"
+        poster="/videos/standards-services-overview-poster.jpg"
+        controls
+        playsInline
+        preload="metadata"
+        aria-label="STANDARDS services overview"
+        className="aspect-video w-full bg-navy object-contain"
+      >
+        Your browser does not support embedded video.{" "}
+        <a href="/videos/standards-services-overview.mp4">Watch the services overview.</a>
+      </video>
       <section className="container-x py-12">
         {services.map((s, i) => (
           <article key={s.id} id={s.id} className="grid gap-6 border-b border-border py-14 md:grid-cols-12">

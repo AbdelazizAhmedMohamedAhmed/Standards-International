@@ -39,4 +39,5 @@ redirect www to the apex after inspecting its current use.
 - Unknown pages return HTTP 404; HTTPS has a valid certificate.
 
 The contact form currently validates inputs but **does not send inquiries**.
-No external media account is required. Original videos use local still images.
+No external media account is required. The services overview video and its
+poster are bundled under public/videos; the homepage uses a local still image.

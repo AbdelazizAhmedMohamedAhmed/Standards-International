@@ -105,7 +105,7 @@ export const industryProducts = [
 // Real photo and video sources. Keep in sync when media changes.
 export const mediaCredits = [
   { item: "Home banner video — container terminal, Port of Cork", author: "Filming Cork", license: "CC BY 3.0", url: "https://commons.wikimedia.org/wiki/File:Aerial_views_of_a_container_terminal_at_the_Port_of_Cork,_Cork,_Ireland.webm" },
-  { item: "Services overview — custom motion graphics, silent; source photographs credited below", author: "Created for STANDARDS", license: "Custom animation; embedded photographs retain their listed licenses", url: "/services" },
+  { item: "Services overview video", author: "Provided by STANDARDS", license: "Supplied for the STANDARDS website; underlying media retain their original rights", url: "/videos/standards-services-overview.mp4" },
   { item: "Business meeting", author: "Shixart1985", license: "CC BY 2.0", url: "https://commons.wikimedia.org/wiki/File:Business_professional_engages_in_note-taking_during_a_meeting_at_a_modern_office_desk.jpg" },
   { item: "Handshake", author: "rawpixel.com", license: "CC0", url: "https://commons.wikimedia.org/wiki/File:Business_agreement_handshake_at_coffee_shop.jpg" },
   { item: "Container ship", author: "W. Bulach", license: "CC BY-SA 4.0", url: "https://commons.wikimedia.org/wiki/File:00_0883_Container_Ship_MARUS.jpg" },
