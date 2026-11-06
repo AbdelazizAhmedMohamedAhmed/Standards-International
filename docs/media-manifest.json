@@ -1,0 +1,58 @@
+[
+  {
+    "metadata": "src/assets/building-reinforcement-steel.jpg.asset.json",
+    "path": "public/__l5e/assets-v1/32f1f594-a08c-4f56-9f55-748c9e240bad/building-reinforcement-steel.jpg",
+    "source": "https://preview--standards-mark-atlas.lovable.app/__l5e/assets-v1/32f1f594-a08c-4f56-9f55-748c9e240bad/building-reinforcement-steel.jpg",
+    "bytes": 294583,
+    "sha256": "98b053ea4207d33ce44edcfc1c0780d66763e3c16f79379264259b95613f54ed"
+  },
+  {
+    "metadata": "src/assets/modern-logistics-conveyors.jpg.asset.json",
+    "path": "public/__l5e/assets-v1/2d2f78a4-e18a-4929-ae61-c7d4dff562dc/modern-logistics-conveyors.jpg",
+    "source": "https://preview--standards-mark-atlas.lovable.app/__l5e/assets-v1/2d2f78a4-e18a-4929-ae61-c7d4dff562dc/modern-logistics-conveyors.jpg",
+    "bytes": 584419,
+    "sha256": "ec0badec4ac82b7dc64acf77b7374912ba44a62d722b167a792219ce4b80ead2"
+  },
+  {
+    "metadata": "src/assets/standards-services-poster.jpg.asset.json",
+    "path": "public/__l5e/assets-v1/9517e4ea-ab5b-41fd-86b7-d52098be6bd3/standards-services-poster.jpg",
+    "source": "https://preview--standards-mark-atlas.lovable.app/__l5e/assets-v1/9517e4ea-ab5b-41fd-86b7-d52098be6bd3/standards-services-poster.jpg",
+    "bytes": 61804,
+    "sha256": "8ed7435fde93a6d763ed9111152cc701e075c8f51a531fa2f2737ca0de6c9cf0"
+  },
+  {
+    "metadata": "src/assets/videos/container-port-day.mp4.asset.json",
+    "path": "public/__l5e/assets-v1/e24519f5-f166-4bd6-93fa-5c40c78f2aa4/container-port-day.mp4",
+    "source": "https://preview--standards-mark-atlas.lovable.app/__l5e/assets-v1/e24519f5-f166-4bd6-93fa-5c40c78f2aa4/container-port-day.mp4",
+    "bytes": 1065213,
+    "sha256": "46099c9649a59a5a58849580d8db6847e686b51c35aeedb3e32cbfeb20d3cd76"
+  },
+  {
+    "metadata": "src/assets/videos/container-port-night.mp4.asset.json",
+    "path": "public/__l5e/assets-v1/9ef1ee32-da5a-47ef-b13f-f8c55e1e5e5d/container-port-night.mp4",
+    "source": "https://preview--standards-mark-atlas.lovable.app/__l5e/assets-v1/9ef1ee32-da5a-47ef-b13f-f8c55e1e5e5d/container-port-night.mp4",
+    "bytes": 1349837,
+    "sha256": "95f404eed3a65038d6f913561a805787ba9b34c58bed77bce18e48e8406d3334"
+  },
+  {
+    "metadata": "src/assets/videos/standards-services-silent.mp4.asset.json",
+    "path": "public/__l5e/assets-v1/99327c3e-3823-457e-a26b-509cc86dc8a3/standards-services-silent.mp4",
+    "source": "https://preview--standards-mark-atlas.lovable.app/__l5e/assets-v1/99327c3e-3823-457e-a26b-509cc86dc8a3/standards-services-silent.mp4",
+    "bytes": 6846798,
+    "sha256": "025ac8888d181d89438487dce3dab1f222b451f17723b8ecfaf469ee9f012c87"
+  },
+  {
+    "metadata": "src/assets/videos/warehouse-pallet-handling.mp4.asset.json",
+    "path": "public/__l5e/assets-v1/6eee8e52-5550-40f3-aa17-e202021aa51a/warehouse-pallet-handling.mp4",
+    "source": "https://preview--standards-mark-atlas.lovable.app/__l5e/assets-v1/6eee8e52-5550-40f3-aa17-e202021aa51a/warehouse-pallet-handling.mp4",
+    "bytes": 3816804,
+    "sha256": "06da2eac8a20896bd1f58dcbea43ab22ab0f06ffe8c95e3a34492db89cc24e41"
+  },
+  {
+    "metadata": "src/assets/warehouse-pallet-handling-poster.jpg.asset.json",
+    "path": "public/__l5e/assets-v1/f3959392-f0bd-410e-aab6-cae0442a86b6/warehouse-pallet-handling-poster.jpg",
+    "source": "https://preview--standards-mark-atlas.lovable.app/__l5e/assets-v1/f3959392-f0bd-410e-aab6-cae0442a86b6/warehouse-pallet-handling-poster.jpg",
+    "bytes": 101672,
+    "sha256": "333067685d5e28a6e487da56d3efb4f1c1459f69ec0ba967a6ed9473663bd558"
+  }
+]

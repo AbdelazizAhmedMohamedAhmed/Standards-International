@@ -1,0 +1,18 @@
+- [x] Tighten the Industries page layout.
+- [x] Replace sector photos with clearly relevant product imagery.
+- [x] Verify the page on desktop and mobile.
+- [x] Focus the shared industry list on packaging materials, chemicals, marble, food and beverages, and furniture.
+- [x] Match the photos to the five focused sectors and verify the updated page.
+- [x] Refine the five photos to a premium, coordinated editorial style and verify them on the page.
+- [x] Premium look: serif headings, refined accents
+- [x] Replace Industries AI images with real licensed product photos (one per sector)
+- [x] Add an FAQ page and verify expandable answers and navigation.
+- [x] Add the shared FAQ answers to How We Work and verify them.
+- [x] Add the approved 20-second services overview video without music.
+- [x] Replace the About page photo with an AI-created image (updated user preference) and update its credit.
+- [x] Reorganize How We Work’s oversized heading and add practical trade-process information.
+- [x] Recommend how to enrich the rest of the website without invented company claims.
+- [x] Audit stage 1: service detail pages, buyer/partner journeys (design only), Home pathways, canonical/JSON-LD/sitemap.
+- [ ] Privacy Policy & Terms — blocked: need real legal text from the business.
+- [ ] Contact details, registration, markets — blocked: user will provide later.
+- [ ] Make forms actually send — blocked: user chose design only for now.
