@@ -13,6 +13,7 @@ import {
   SITE_URL,
 } from "./site-content";
 import { privacyPolicy, termsOfUse, type LegalDocument } from "./legal-content";
+import { getWhatsAppLink } from "./whatsapp";
 
 // Add only verified business-owned profile URLs. A personal GitHub account is not
 // evidence of an official business profile; an empty list is deliberately omitted.
@@ -20,9 +21,9 @@ export const verifiedOrganizationProfiles: string[] = [];
 
 export type PublicPage = { path: string; title: string; description: string; body: string };
 const bullets = (items: readonly string[]) => items.map((item) => `- ${item}`).join("\n");
-const contact = `General information: [${companyContact.generalEmail}](mailto:${companyContact.generalEmail}).\n\nSales and partnerships: [${companyContact.salesEmail}](mailto:${companyContact.salesEmail}).\n\nLocation: ${companyContact.location}.`;
+const contact = `General information: [${companyContact.generalEmail}](mailto:${companyContact.generalEmail}).\n\nSales and partnerships: [${companyContact.salesEmail}](mailto:${companyContact.salesEmail}).\n\nWhatsApp Business: [${companyContact.whatsappDisplay}](${getWhatsAppLink()}). Opening the chat does not send a message automatically.\n\nLocation: ${companyContact.location}.`;
 const inquiryStatus =
-  "Online inquiry sending is not enabled. The on-page checklist validates details locally; it does not send messages, upload files, or place orders. Contact sales by email and attach relevant documents in your email application.";
+  "Online inquiry sending is not enabled. The on-page checklist validates details locally; it does not send messages, upload files, or place orders. Contact sales by email or WhatsApp and attach relevant documents in your chosen application.";
 const legalBody = (document: LegalDocument) =>
   `Last updated: ${document.updated}.\n\n${document.sections.map((section) => `## ${section.title}\n\n${section.paragraphs.join("\n\n")}`).join("\n\n")}\n\n${contact}`;
 
@@ -157,6 +158,12 @@ export function organizationSchema() {
         "@type": "ContactPoint",
         contactType: "sales and partnerships",
         email: companyContact.salesEmail,
+      },
+      {
+        "@type": "ContactPoint",
+        contactType: "WhatsApp business inquiries",
+        telephone: companyContact.whatsappNumber,
+        url: getWhatsAppLink(),
       },
     ],
     ...(verifiedOrganizationProfiles.length ? { sameAs: verifiedOrganizationProfiles } : {}),

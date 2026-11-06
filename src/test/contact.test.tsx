@@ -26,7 +26,7 @@ async function renderContact(type: "buyer" | "partner" = "buyer") {
 describe("Inquiry preparation", () => {
   it("explains email delivery before a visitor fills out the checklist", async () => {
     await renderContact();
-    expect(screen.getByText("Send your inquiry by email")).toBeInTheDocument();
+    expect(screen.getByText("Send your inquiry by email or WhatsApp")).toBeInTheDocument();
     expect(screen.getByText(/Online sending is not enabled yet/)).toBeInTheDocument();
     expect(
       screen

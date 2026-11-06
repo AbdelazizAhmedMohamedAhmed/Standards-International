@@ -2,6 +2,7 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState, type FormEvent, type ReactNode } from "react";
 import { companyContact, industries, SITE_URL } from "@/lib/site-content";
 import { PageHero } from "@/components/site/SiteChrome";
+import { getWhatsAppLink } from "@/lib/whatsapp";
 
 type Journey = "buyer" | "partner";
 
@@ -159,7 +160,7 @@ function Contact() {
           </p>
 
           <div className="mt-6 border-l-2 border-primary bg-card p-5 text-sm text-navy">
-            <p className="font-semibold">Send your inquiry by email</p>
+            <p className="font-semibold">Send your inquiry by email or WhatsApp</p>
             <p className="mt-2">
               Online sending is not enabled yet. Email buyer requests and partnership inquiries to{" "}
               <a
@@ -167,9 +168,18 @@ function Contact() {
                 className="font-semibold underline underline-offset-4"
               >
                 {companyContact.salesEmail}
+              </a>{" "}
+              or{" "}
+              <a
+                href={getWhatsAppLink(journey)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold underline underline-offset-4"
+              >
+                chat on WhatsApp<span className="sr-only"> (opens in a new tab)</span>
               </a>
               . You can use the checklist below to prepare your details; it does not send or upload
-              anything. Attach specifications or company profiles directly to your email.
+              anything. Attach specifications or company profiles in your chosen application.
             </p>
           </div>
 
@@ -386,6 +396,16 @@ function Contact() {
               className="mt-2 block break-words text-primary underline underline-offset-4"
             >
               {companyContact.salesEmail}
+            </a>
+            <p className="mt-6 font-semibold text-navy">WhatsApp Business</p>
+            <p className="mt-2">{companyContact.whatsappDisplay}</p>
+            <a
+              href={getWhatsAppLink(journey)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-flex min-h-11 items-center rounded bg-[#075e54] px-4 py-3 font-semibold text-white hover:bg-[#064d44] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+            >
+              Chat on WhatsApp <span className="sr-only">(opens in a new tab)</span>
             </a>
           </div>
         </aside>

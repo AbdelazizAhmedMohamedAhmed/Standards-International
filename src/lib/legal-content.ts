@@ -24,7 +24,7 @@ export const termsOfUse: LegalDocument = {
       title: "Information, inquiries and commercial agreements",
       paragraphs: [
         "Website content describes potential services and areas of focus. It is not a binding quotation, offer to supply, guarantee of availability, or acceptance of an order. Prices, specifications, minimum quantities, lead times, quality requirements, inspection arrangements, Incoterms, payment terms and responsibilities must be confirmed in writing for each engagement.",
-        "Sending an inquiry, using a checklist, or asking an agent tool a question does not establish an agency, partnership or contractual relationship, reserve goods, or authorize anyone to incur costs on your behalf. Online inquiry checklists currently do not send or upload information. Use the published sales email to contact the business.",
+        "Sending an inquiry, using a checklist, or asking an agent tool a question does not establish an agency, partnership or contractual relationship, reserve goods, or authorize anyone to incur costs on your behalf. Online inquiry checklists currently do not send or upload information. Use the published sales email or WhatsApp contact to reach the business.",
         "Do not rely on website information as legal, customs, tax, financial, engineering or product-safety advice. Obtain qualified advice and verify requirements for the product, destination and transaction.",
       ],
     },
@@ -70,7 +70,7 @@ export const termsOfUse: LegalDocument = {
 export const privacyPolicy: LegalDocument = {
   title: "Privacy Policy",
   description:
-    "How information is handled when you visit Standards or contact the business by email.",
+    "How information is handled when you visit Standards or contact the business by email or WhatsApp.",
   updated: "6 November 2026",
   sections: [
     {
@@ -84,6 +84,7 @@ export const privacyPolicy: LegalDocument = {
       paragraphs: [
         "When you email the business, your message may include your name, business contact details, company information, requirements, correspondence and attachments. Supply only what is necessary for the inquiry and what you are authorized to share. Do not send passwords, payment-card information, identity documents or other sensitive personal information unless a suitable process has been agreed.",
         "The current on-page inquiry checklist validates information in your browser. Its check button does not send the entered fields or selected files to Standards, and it does not create an order. Email links open your own email application; the message is sent only when you send it from that application.",
+        "WhatsApp links open the external WhatsApp service with a short suggested message. They do not automatically send a message or copy your inquiry form fields. If you choose to send a message, your WhatsApp account details and message content are processed by WhatsApp/Meta and received by the business under the service's applicable terms and privacy practices. No WhatsApp tracking widget or messaging script is embedded on this website.",
       ],
     },
     {
@@ -120,7 +121,7 @@ export const privacyPolicy: LegalDocument = {
     {
       title: "Changes and scope",
       paragraphs: [
-        "This notice describes the current informational website and email-based inquiry process. It should be reviewed whenever inquiry delivery, storage, analytics, providers or legal requirements change. External sites linked from this website have their own privacy policies.",
+        "This notice describes the current informational website and email/WhatsApp inquiry process. It should be reviewed whenever inquiry delivery, storage, analytics, providers or legal requirements change. External sites linked from this website have their own privacy policies.",
       ],
     },
   ],

@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
 import { companyContact } from "@/lib/site-content";
+import { getWhatsAppLink } from "@/lib/whatsapp";
 
 const nav = [
   { to: "/about", label: "About" },
@@ -126,6 +127,14 @@ export function Footer() {
           >
             {companyContact.salesEmail}
           </a>
+          <a
+            href={getWhatsAppLink()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 block text-sm underline underline-offset-4"
+          >
+            WhatsApp: {companyContact.whatsappDisplay}
+          </a>
           <Link
             to="/contact"
             search={{ type: "buyer" }}
@@ -143,7 +152,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-navy-foreground/10">
-        <div className="container-x py-6 text-xs text-navy-foreground/60">
+        <div className="container-x pt-6 pb-20 text-xs text-navy-foreground/60">
           © {new Date().getFullYear()} STANDARDS for International Trade ·{" "}
           <Link to="/credits" className="underline hover:text-navy-foreground">
             Photo & video credits

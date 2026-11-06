@@ -14,6 +14,7 @@ import appCss from "../styles.css?url";
 import { SITE_URL } from "@/lib/site-content";
 import { Header, Footer } from "@/components/site/SiteChrome";
 import { PublicAgentTools } from "@/components/site/PublicAgentTools";
+import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 import { organizationSchema } from "@/lib/public-site";
 
 function NotFoundComponent() {
@@ -171,6 +172,7 @@ function RootComponent() {
         <Outlet />
       </main>
       <Footer />
+      <WhatsAppButton />
     </QueryClientProvider>
   );
 }

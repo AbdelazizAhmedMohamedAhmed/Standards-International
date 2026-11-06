@@ -1,4 +1,5 @@
 import { companyContact, industries, services, serviceDetails } from "./site-content";
+import { getWhatsAppLink } from "./whatsapp";
 import { canonicalPageUrl, findPublicPage, publicPages, renderPageMarkdown } from "./public-site";
 
 export const publicAgentTools = [
@@ -103,6 +104,7 @@ export function executePublicAgentTool(name: string, value: unknown = {}): objec
       return {
         name: "Standards for International Trade",
         ...companyContact,
+        whatsappUrl: getWhatsAppLink(),
         industries,
         inquirySendingEnabled: false,
       };
@@ -131,6 +133,8 @@ export function executePublicAgentTool(name: string, value: unknown = {}): objec
       return {
         journey: args["journey"],
         email: companyContact.salesEmail,
+        whatsappNumber: companyContact.whatsappNumber,
+        whatsappUrl: getWhatsAppLink(args["journey"]),
         fields:
           args["journey"] === "buyer"
             ? [
@@ -155,7 +159,7 @@ export function executePublicAgentTool(name: string, value: unknown = {}): objec
               ],
         sendingEnabled: false,
         instructions:
-          "Send the inquiry from your own email application. Attach specifications or company profiles there. This tool does not send or upload anything.",
+          "Contact sales using your own email or WhatsApp application. Attach specifications or company profiles there. This tool does not send or upload anything.",
       };
     }
     case "read_public_page": {

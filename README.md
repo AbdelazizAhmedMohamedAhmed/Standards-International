@@ -50,7 +50,9 @@ and applicable law before relying on them; update them when data handling change
 - The services page plays the supplied overview video from local files. The
   homepage uses a bundled still image; all displayed media are served locally.
 - Automatic inquiry sending still requires a configured sending service. Direct
-  email links for sales and general information are available now.
+  email links and WhatsApp Business click-to-chat are available now. The floating
+  button, footer and Contact page use the public number in `companyContact`;
+  suggested messages contain no visitor-entered form data and are not auto-sent.
 - Lint passes with six existing Fast Refresh development warnings.
 - One moderate advisory remains in a transitive lint-tool dependency; see
   WEBSITE-IMPROVEMENTS.md for the audit scope and next steps.
