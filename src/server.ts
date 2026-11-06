@@ -2,6 +2,7 @@ import "./lib/error-capture";
 
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
+import { handleAgentRequest, withAgentLinks } from "./lib/agent-http.server";
 
 type ServerEntry = {
   fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;
@@ -47,9 +48,14 @@ function isH3SwallowedErrorBody(body: string): boolean {
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
+      const agentResponse = await handleAgentRequest(request);
+      if (agentResponse) return agentResponse;
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(response);
+      return withAgentLinks(
+        await normalizeCatastrophicSsrResponse(response),
+        new URL(request.url).pathname,
+      );
     } catch (error) {
       console.error(error);
       return new Response(renderErrorPage(), {

@@ -148,6 +148,14 @@ export function Footer() {
           <Link to="/credits" className="underline hover:text-navy-foreground">
             Photo & video credits
           </Link>
+          {" · "}
+          <Link to="/terms" className="underline hover:text-navy-foreground">
+            Terms of Use
+          </Link>
+          {" · "}
+          <Link to="/privacy" className="underline hover:text-navy-foreground">
+            Privacy Policy
+          </Link>
         </div>
       </div>
     </footer>

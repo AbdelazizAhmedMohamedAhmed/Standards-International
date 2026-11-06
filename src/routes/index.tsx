@@ -32,7 +32,35 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: SITE_URL },
     ],
-    links: [{ rel: "canonical", href: SITE_URL }],
+    links: [
+      { rel: "canonical", href: SITE_URL },
+      { rel: "alternate", href: `${SITE_URL}/index.md`, type: "text/markdown" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "@id": `${SITE_URL}/#webpage`,
+          url: SITE_URL,
+          name: "Standards — Connecting Markets. Building Opportunities.",
+          description:
+            "International trading, global sourcing, and commercial partnerships from Cairo, Egypt.",
+          isPartOf: { "@id": `${SITE_URL}/#website` },
+          about: { "@id": `${SITE_URL}/#organization` },
+          mainEntity: {
+            "@type": "ItemList",
+            itemListElement: services.map((service, index) => ({
+              "@type": "ListItem",
+              position: index + 1,
+              name: service.title,
+              url: `${SITE_URL}/services/${service.id}`,
+            })),
+          },
+        }),
+      },
+    ],
   }),
   component: Index,
 });

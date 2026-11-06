@@ -1,11 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SITE_URL } from "@/lib/site-content";
+import { robotsText } from "@/lib/public-site";
 
 export const Route = createFileRoute("/robots.txt")({
   server: {
     handlers: {
       GET: () =>
-        new Response(`User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`, {
+        new Response(robotsText(), {
           headers: { "Content-Type": "text/plain; charset=utf-8" },
         }),
     },

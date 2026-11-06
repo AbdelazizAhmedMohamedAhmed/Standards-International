@@ -11,8 +11,10 @@ import {
 import { type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { companyContact, SITE_URL } from "@/lib/site-content";
+import { SITE_URL } from "@/lib/site-content";
 import { Header, Footer } from "@/components/site/SiteChrome";
+import { PublicAgentTools } from "@/components/site/PublicAgentTools";
+import { organizationSchema } from "@/lib/public-site";
 
 function NotFoundComponent() {
   return (
@@ -101,27 +103,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     scripts: [
       {
         type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          name: "STANDARDS for International Trade",
-          url: SITE_URL,
-          logo: `${SITE_URL}/standards-icon.jpg`,
-          email: companyContact.generalEmail,
-          address: { "@type": "PostalAddress", addressLocality: "Cairo", addressCountry: "EG" },
-        }),
+        children: JSON.stringify(organizationSchema()),
       },
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebSite",
+          "@id": `${SITE_URL}/#website`,
+          publisher: { "@id": `${SITE_URL}/#organization` },
           name: "STANDARDS for International Trade",
           url: SITE_URL,
         }),
       },
     ],
     links: [
+      { rel: "describedby", href: `${SITE_URL}/llms.txt`, type: "text/plain" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -168,6 +165,7 @@ function RootComponent() {
       >
         Skip to main content
       </a>
+      <PublicAgentTools />
       <Header />
       <main id="main-content" tabIndex={-1}>
         <Outlet />

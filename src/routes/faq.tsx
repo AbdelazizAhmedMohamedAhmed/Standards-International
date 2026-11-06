@@ -1,4 +1,4 @@
-import { SITE_URL } from "@/lib/site-content";
+import { faqs, SITE_URL } from "@/lib/site-content";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { PageHero } from "@/components/site/SiteChrome";
@@ -24,6 +24,21 @@ export const Route = createFileRoute("/faq")({
       { property: "og:url", content: `${SITE_URL}/faq` },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/faq` }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          url: `${SITE_URL}/faq`,
+          mainEntity: faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: { "@type": "Answer", text: faq.answer },
+          })),
+        }),
+      },
+    ],
   }),
   component: Faq,
 });

@@ -32,6 +32,18 @@ The production build creates a standalone Node server under `.output/server`.
 Set `PORT` and `HOST` to choose its listening address.
 No external project service or account is required to build or run the app.
 
+## Agent access and website policies
+
+Public crawl resources, llms.txt, Markdown variants, JSON-LD and discovery headers
+are served by the application. `/mcp` is a public read-only endpoint using the
+official MCP SDK; browser WebMCP registers where the browser supports it.
+See [AGENT-READINESS.md](AGENT-READINESS.md) for endpoints, safeguards, verification
+and the checklist. Official external profile URLs are still needed for `sameAs`.
+
+Website-use terms and privacy information are available at `/terms` and
+`/privacy`. Have the documents reviewed against the business's actual practices
+and applicable law before relying on them; update them when data handling changes.
+
 ## Known limitations
 
 - Inquiry sending is not enabled; the contact form validates details locally.

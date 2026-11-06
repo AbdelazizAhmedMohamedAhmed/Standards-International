@@ -339,6 +339,13 @@ function Contact() {
                 <span className="text-primary">*</span>
               </span>
             </label>
+            <p className="text-sm text-muted-foreground">
+              Read how inquiry information is handled in our{" "}
+              <a href="/privacy" className="text-primary underline underline-offset-4">
+                Privacy Policy
+              </a>
+              .
+            </p>
             {errors["consent"] && (
               <p id="consent-err" className="-mt-6 text-sm text-destructive">
                 {errors["consent"]}
