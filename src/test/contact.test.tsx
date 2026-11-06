@@ -56,5 +56,7 @@ describe("Inquiry preparation", () => {
     );
     expect(screen.getByLabelText(/^Manufacturing or trading capabilities/)).toBeRequired();
     expect(screen.queryByLabelText(/^Destination country/)).not.toBeInTheDocument();
+    expect(screen.getAllByRole("link", { name: "partner@standards-intl.com" })).toHaveLength(2);
+    expect(screen.getAllByRole("link", { name: "sales@standards-intl.com" })).toHaveLength(1);
   });
 });

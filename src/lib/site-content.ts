@@ -1,6 +1,7 @@
 export const companyContact = {
   generalEmail: "info@standards-intl.com",
   salesEmail: "sales@standards-intl.com",
+  partnerEmail: "partner@standards-intl.com",
   location: "Cairo, Egypt",
   whatsappNumber: "+201111014264",
   whatsappDisplay: "+20 111 101 4264",

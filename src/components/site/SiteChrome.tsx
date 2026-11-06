@@ -128,6 +128,12 @@ export function Footer() {
             {companyContact.salesEmail}
           </a>
           <a
+            href={`mailto:${companyContact.partnerEmail}`}
+            className="mt-2 block break-words text-sm underline underline-offset-4"
+          >
+            {companyContact.partnerEmail}
+          </a>
+          <a
             href={getWhatsAppLink()}
             target="_blank"
             rel="noopener noreferrer"

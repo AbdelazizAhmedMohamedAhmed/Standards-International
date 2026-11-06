@@ -21,9 +21,9 @@ export const verifiedOrganizationProfiles: string[] = [];
 
 export type PublicPage = { path: string; title: string; description: string; body: string };
 const bullets = (items: readonly string[]) => items.map((item) => `- ${item}`).join("\n");
-const contact = `General information: [${companyContact.generalEmail}](mailto:${companyContact.generalEmail}).\n\nSales and partnerships: [${companyContact.salesEmail}](mailto:${companyContact.salesEmail}).\n\nWhatsApp Business: [${companyContact.whatsappDisplay}](${getWhatsAppLink()}). Opening the chat does not send a message automatically.\n\nLocation: ${companyContact.location}.`;
+const contact = `General information: [${companyContact.generalEmail}](mailto:${companyContact.generalEmail}).\n\nSales and buyer inquiries: [${companyContact.salesEmail}](mailto:${companyContact.salesEmail}).\n\nManufacturers and trade partners: [${companyContact.partnerEmail}](mailto:${companyContact.partnerEmail}).\n\nWhatsApp Business: [${companyContact.whatsappDisplay}](${getWhatsAppLink()}). Opening the chat does not send a message automatically.\n\nLocation: ${companyContact.location}.`;
 const inquiryStatus =
-  "Online inquiry sending is not enabled. The on-page checklist validates details locally; it does not send messages, upload files, or place orders. Contact sales by email or WhatsApp and attach relevant documents in your chosen application.";
+  "Online inquiry sending is not enabled. The on-page checklist validates details locally; it does not send messages, upload files, or place orders. Use the buyer or partnership email listed in the contact information, or WhatsApp, and attach relevant documents in your chosen application.";
 const legalBody = (document: LegalDocument) =>
   `Last updated: ${document.updated}.\n\n${document.sections.map((section) => `## ${section.title}\n\n${section.paragraphs.join("\n\n")}`).join("\n\n")}\n\n${contact}`;
 
@@ -156,8 +156,13 @@ export function organizationSchema() {
       },
       {
         "@type": "ContactPoint",
-        contactType: "sales and partnerships",
+        contactType: "sales and buyer inquiries",
         email: companyContact.salesEmail,
+      },
+      {
+        "@type": "ContactPoint",
+        contactType: "manufacturers and trade partnerships",
+        email: companyContact.partnerEmail,
       },
       {
         "@type": "ContactPoint",

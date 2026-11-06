@@ -19,7 +19,7 @@ describe("Public browser tools", () => {
     expect(tool.annotations.readOnlyHint).toBe(true);
     const response = await tool.execute({ journey: "partner" });
     const data = JSON.parse(response.content[0]!.text);
-    expect(data.email).toBe("sales@standards-intl.com");
+    expect(data.email).toBe("partner@standards-intl.com");
     expect(data.sendingEnabled).toBe(false);
     dispose();
     expect(unregisterTool).toHaveBeenCalledTimes(4);

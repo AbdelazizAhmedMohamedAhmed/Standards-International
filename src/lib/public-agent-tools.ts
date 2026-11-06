@@ -132,7 +132,8 @@ export function executePublicAgentTool(name: string, value: unknown = {}): objec
         throw new Error("journey must be buyer or partner.");
       return {
         journey: args["journey"],
-        email: companyContact.salesEmail,
+        email:
+          args["journey"] === "partner" ? companyContact.partnerEmail : companyContact.salesEmail,
         whatsappNumber: companyContact.whatsappNumber,
         whatsappUrl: getWhatsAppLink(args["journey"]),
         fields:
@@ -159,7 +160,7 @@ export function executePublicAgentTool(name: string, value: unknown = {}): objec
               ],
         sendingEnabled: false,
         instructions:
-          "Contact sales using your own email or WhatsApp application. Attach specifications or company profiles there. This tool does not send or upload anything.",
+          "Use the email address or WhatsApp link returned for this inquiry in your own application. Attach specifications or company profiles there. This tool does not send or upload anything.",
       };
     }
     case "read_public_page": {

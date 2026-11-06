@@ -43,6 +43,10 @@ describe("Site navigation", () => {
       "mailto:sales@standards-intl.com",
     );
     expect(screen.getByText("Cairo, Egypt")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "partner@standards-intl.com" })).toHaveAttribute(
+      "href",
+      "mailto:partner@standards-intl.com",
+    );
     expect(screen.getByRole("link", { name: "Request product sourcing" })).toHaveAttribute(
       "href",
       expect.stringContaining("type=buyer"),

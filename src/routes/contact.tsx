@@ -76,6 +76,8 @@ function F({
 function Contact() {
   const { type } = Route.useSearch();
   const journey: Journey = type ?? "buyer";
+  const inquiryEmail =
+    journey === "partner" ? companyContact.partnerEmail : companyContact.salesEmail;
   const navigate = useNavigate({ from: "/contact" });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [notice, setNotice] = useState("");
@@ -162,12 +164,13 @@ function Contact() {
           <div className="mt-6 border-l-2 border-primary bg-card p-5 text-sm text-navy">
             <p className="font-semibold">Send your inquiry by email or WhatsApp</p>
             <p className="mt-2">
-              Online sending is not enabled yet. Email buyer requests and partnership inquiries to{" "}
+              Online sending is not enabled yet. Email your{" "}
+              {journey === "partner" ? "partnership inquiry" : "buyer request"} to{" "}
               <a
-                href={`mailto:${companyContact.salesEmail}`}
+                href={`mailto:${inquiryEmail}`}
                 className="font-semibold underline underline-offset-4"
               >
-                {companyContact.salesEmail}
+                {inquiryEmail}
               </a>{" "}
               or{" "}
               <a
@@ -390,12 +393,19 @@ function Contact() {
             >
               {companyContact.generalEmail}
             </a>
-            <p className="mt-6 font-semibold text-navy">Sales and partnerships</p>
+            <p className="mt-6 font-semibold text-navy">Sales and buyer inquiries</p>
             <a
               href={`mailto:${companyContact.salesEmail}`}
               className="mt-2 block break-words text-primary underline underline-offset-4"
             >
               {companyContact.salesEmail}
+            </a>
+            <p className="mt-6 font-semibold text-navy">Manufacturers and trade partners</p>
+            <a
+              href={`mailto:${companyContact.partnerEmail}`}
+              className="mt-2 block break-words text-primary underline underline-offset-4"
+            >
+              {companyContact.partnerEmail}
             </a>
             <p className="mt-6 font-semibold text-navy">WhatsApp Business</p>
             <p className="mt-2">{companyContact.whatsappDisplay}</p>
