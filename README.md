@@ -37,4 +37,8 @@ No external project service or account is required to build or run the app.
 - Inquiry sending is not enabled; the contact form validates details locally.
 - The services page plays the supplied overview video from local files. The
   homepage uses a bundled still image; all displayed media are served locally.
-- The source has existing formatting lint errors.
+- Automatic inquiry sending still requires a configured sending service. Direct
+  email links for sales and general information are available now.
+- Lint passes with six existing Fast Refresh development warnings.
+- One moderate advisory remains in a transitive lint-tool dependency; see
+  WEBSITE-IMPROVEMENTS.md for the audit scope and next steps.

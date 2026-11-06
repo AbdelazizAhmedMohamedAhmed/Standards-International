@@ -11,7 +11,7 @@ import {
 import { type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { SITE_URL } from "@/lib/site-content";
+import { companyContact, SITE_URL } from "@/lib/site-content";
 import { Header, Footer } from "@/components/site/SiteChrome";
 
 function NotFoundComponent() {
@@ -76,25 +76,64 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "STANDARDS for International Trade" },
-      { name: "description", content: "International trading, global sourcing and trusted commercial partnerships from Egypt." },
+      { title: "Standards for International Trade" },
+      {
+        name: "description",
+        content:
+          "International trading, global sourcing and trusted commercial partnerships from Egypt.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:site_name", content: "STANDARDS for International Trade" },
+      { property: "og:site_name", content: "Standards for International Trade" },
+      { property: "og:image", content: `${SITE_URL}/standards-icon.jpg` },
+      {
+        property: "og:image:alt",
+        content: "Standards: red S monogram with a navy square",
+      },
+      { property: "og:image:width", content: "1280" },
+      { property: "og:image:height", content: "1280" },
+      { name: "twitter:image", content: `${SITE_URL}/standards-icon.jpg` },
+      {
+        name: "twitter:image:alt",
+        content: "Standards: red S monogram with a navy square",
+      },
     ],
     scripts: [
-      { type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "Organization", name: "STANDARDS for International Trade", url: SITE_URL, address: { "@type": "PostalAddress", addressCountry: "EG" } }) },
-      { type: "application/ld+json", children: JSON.stringify({ "@context": "https://schema.org", "@type": "WebSite", name: "STANDARDS for International Trade", url: SITE_URL }) },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "STANDARDS for International Trade",
+          url: SITE_URL,
+          logo: `${SITE_URL}/standards-icon.jpg`,
+          email: companyContact.generalEmail,
+          address: { "@type": "PostalAddress", addressLocality: "Cairo", addressCountry: "EG" },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "STANDARDS for International Trade",
+          url: SITE_URL,
+        }),
+      },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Archivo:wght@500;600;700;800;900&family=Hanken+Grotesk:wght@400;500;600&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Archivo:wght@500;600;700;800;900&family=Hanken+Grotesk:wght@400;500;600&display=swap",
+      },
       {
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/standards-icon.svg", type: "image/svg+xml", sizes: "any" },
+      { rel: "icon", href: "/favicon.ico?v=3", type: "image/x-icon", sizes: "64x64" },
+      { rel: "icon", href: "/standards-icon.svg?v=3", type: "image/svg+xml", sizes: "any" },
     ],
   }),
   shellComponent: RootShell,
@@ -123,8 +162,14 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+      <a
+        href="#main-content"
+        className="sr-only fixed left-4 top-4 z-50 bg-navy px-5 py-3 text-navy-foreground focus:not-sr-only"
+      >
+        Skip to main content
+      </a>
       <Header />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <Outlet />
       </main>
       <Footer />

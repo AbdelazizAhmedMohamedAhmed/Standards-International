@@ -8,7 +8,22 @@ export default defineConfig(({ command }) => ({
   resolve: { tsconfigPaths: true },
   plugins: [
     tanstackStart({ server: { entry: "server" } }),
-    ...(command === "build" ? [nitro({ preset: "node-server" })] : []),
+    ...(command === "build"
+      ? [
+          nitro({
+            preset: "node-server",
+            routeRules: {
+              "/**": {
+                headers: {
+                  "x-content-type-options": "nosniff",
+                  "referrer-policy": "strict-origin-when-cross-origin",
+                  "x-frame-options": "SAMEORIGIN",
+                },
+              },
+            },
+          }),
+        ]
+      : []),
     react(),
     tailwindcss(),
   ],

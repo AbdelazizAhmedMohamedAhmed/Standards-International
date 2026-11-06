@@ -1,4 +1,5 @@
 ## Project rules
+
 - Site copy lists (services, steps, industries, inquiry types, FAQs) live in src/lib/site-content.ts so pages share one editable source.
 - FAQ answers use the shared FaqAnswers component on the FAQ and How We Work pages to keep behavior consistent.
 - Real media credits live in mediaCredits (src/lib/site-content.ts), shown on /credits; update it whenever a photo or video changes, since several licenses require attribution.

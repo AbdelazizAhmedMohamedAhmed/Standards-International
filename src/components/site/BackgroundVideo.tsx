@@ -1,7 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 
 /** Muted looping background video; shows only the poster for reduced-motion users. */
-export function BackgroundVideo({ src, poster, className = "" }: { src: string; poster: string; className?: string }) {
+export function BackgroundVideo({
+  src,
+  poster,
+  className = "",
+}: {
+  src: string;
+  poster: string;
+  className?: string;
+}) {
   const ref = useRef<HTMLVideoElement>(null);
   const [still, setStill] = useState(false);
   useEffect(() => {
