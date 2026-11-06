@@ -4,6 +4,8 @@ Prepared 6 November 2026 from main commit `ce7735179b420c87a49210eea2df850fe1ebd
 
 ## Status
 
+**Concurrent-update notice:** Final verification found that remote `main` had independently advanced to `6cc5d4a09c324267788ccf0896a194d1e6b92fdb` (commit message: "Add public agent discovery, Markdown, read-only MCP and website policies"). This preparation branch deliberately remains based on the original ZIP snapshot. It is an archive-based deployment reference, not the latest website release. Do not deploy or merge it over newer work without reconciling the differences and revalidating the resulting version. The newer source references `standards-intl.com`; this task did not verify domain ownership or hosting setup. No changes to main were made by this preparation.
+
 Prepared and tested locally; not published. The purchased Hostinger plan, website inventory, available Node.js slots and final domain remain unverified. No merge, hosting changes, purchase or DNS change is authorized by this preparation.
 
 ## Repository structure
